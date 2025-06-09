@@ -1,0 +1,29 @@
+<!-- Simple popup UI -->
+<html>
+  <head><link rel="stylesheet" href="styles.css"></head>
+  <body>
+    <h1>CyberSentinel</h1>
+    <p id="status">Loading status...</p>
+    <a href="options.html">Settings</a>
+    <script src="popup.js"></script>
+  </body>
+</html>
+
+/* popup.js */
+chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+  const tab = tabs[0];
+  document.getElementById("status").textContent = `Scanning: ${tab.url}`;
+});
+
+/* options.html */
+<html>
+  <body>
+    <h2>CyberSentinel Settings</h2>
+    <label><input type="checkbox" id="urlCheck"> Enable URL Check</label><br>
+    <label><input type="checkbox" id="ipCheck"> Enable IP Check</label><br>
+    <label><input type="checkbox" id="emailCheck"> Enable Email Breach Check</label><br>
+    <label><input type="checkbox" id="logging"> Enable Logging</label><br>
+    <button id="save">Save</button>
+    <script src="options.js"></script>
+  </body>
+</html>

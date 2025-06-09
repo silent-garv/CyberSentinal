@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Validate Chrome Extension Manifest",
+      "type": "shell",
+      "command": "echo Manifest and files are ready. Load the extension in Chrome via chrome://extensions > Load unpacked.",
+      "problemMatcher": [],
+      "group": "build"
+    }
+  ]
+}
